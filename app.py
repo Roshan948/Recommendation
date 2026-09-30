@@ -1,15 +1,3 @@
-"""
-MovieLens-1M recommender - working prototype.
-
-Loads ONLY what the notebook saved in ./artifacts (model.pt, model_config.json, preprocessing.joblib,
-users_lookup.csv, movies_lookup.csv, ratings_clean.csv.gz). No notebook variables are needed.
-
-    Colab :  !pip -q install gradio      then      %run app.py
-    Local :  pip install gradio torch scikit-learn pandas scipy joblib      then      python app.py
-    CLI   :  python app.py --cli --user 1 --n 10
-
-Set ART_DIR=/path/to/artifacts if the folder is somewhere else.
-"""
 import os
 import sys
 import json
@@ -22,14 +10,8 @@ import joblib
 from sklearn.preprocessing import normalize
 
 ART_DIR = os.environ.get("ART_DIR", "artifacts")
-MIN_TRAIN_COUNT = 20      # never recommend movies with fewer training ratings than this
-PRIOR_W = 5               # shrinkage strength for the popularity fallback
-FOLD_LAMBDA = 0.5         # ridge strength when folding a brand-new user into the embedding space
+MIN_TRAIN_COUNT = 20      
 
-
-# ----------------------------------------------------------------------------------------------
-# Model wrapper (the only part that needs PyTorch)
-# ----------------------------------------------------------------------------------------------
 class TorchScorer:
     """Rebuilds the network described in model_config.json and exposes numpy-friendly scoring."""
 
