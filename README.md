@@ -58,10 +58,3 @@
   - Brand‑new users need the fold‑in method.
   - Movies with fewer than 20 training ratings are never recommended.
 
-## 6. Run It
-```bash
-pip install numpy pandas scipy scikit-learn joblib torch gradio
-python app.py --cli --user 1 --n 10   # terminal test
-python app.py                         # GUI at http://127.0.0.1:7860
-```
-Keep `app.py` next to the `artifacts/` folder, or set `ART_DIR` to its path.
