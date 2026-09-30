@@ -56,5 +56,5 @@
   - Random split, not a time‑based one.
   - The model is trained on the train split only.
   - Brand‑new users need the fold‑in method.
-  - Movies with fewer than 20 training ratings are never recommended.
+  - Movies with fewer than 20 training ratings are never recommended
 
